@@ -11,4 +11,4 @@ def torchPurge(tensors: list):
 
     # Clear the cache and run garbage collection
     torch.cuda.empty_cache() 
-    return gc.collect()
+    gc.collect()
