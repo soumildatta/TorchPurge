@@ -2,8 +2,9 @@ import torch
 import gc
 
 # Compatible with CUDA and MPS devices
-def torchPurge(mps_tensors: list):
-    for tensor in mps_tensors:
+def torchPurge(tensors: list):
+    for tensor in tensors:
+        # Move tensor to cpu first then delete
         if tensor.is_cuda: 
             tensor = tensor.cpu()
         del tensor 
